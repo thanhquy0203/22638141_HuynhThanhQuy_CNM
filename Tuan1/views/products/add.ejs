@@ -1,0 +1,25 @@
+<%- include("../layouts/header", { title: "Add Product" }) %>
+
+<div class="card shadow-sm border-0">
+  <div class="card-body p-4">
+    <h4 class="mb-3">ADD PRODUCT</h4>
+    <form method="post" action="/products/add">
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input class="form-control" name="name" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input class="form-control" name="price" type="number" step="0.01" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Quantity</label>
+        <input class="form-control" name="quantity" type="number" required>
+      </div>
+      <button class="btn btn-primary">Save</button>
+      <a class="btn btn-light" href="/products">Cancel</a>
+    </form>
+  </div>
+</div>
+
+<%- include("../layouts/footer") %>
