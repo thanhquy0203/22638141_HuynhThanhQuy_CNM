@@ -1,0 +1,27 @@
+<%- include("../layouts/header", { title: "Login" }) %>
+
+<div class="row justify-content-center">
+  <div class="col-md-5">
+    <div class="card shadow-sm border-0">
+      <div class="card-body p-4">
+        <h4 class="mb-3">Đăng nhập</h4>
+        <form method="post" action="/login">
+          <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input class="form-control" name="username" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input class="form-control" type="password" name="password" required>
+          </div>
+          <button class="btn btn-dark w-100">Login</button>
+        </form>
+        <div class="text-muted small mt-3">
+          Tài khoản: <b>admin</b> / <b>123456</b> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("../layouts/footer") %>
