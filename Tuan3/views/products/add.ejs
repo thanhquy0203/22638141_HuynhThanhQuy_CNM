@@ -1,0 +1,44 @@
+<%- include("../layouts/header", { title: "Add Product" }) %>
+
+<div class="card shadow-sm">
+  <div class="card-body p-4">
+    <h4 class="mb-3">Add Product</h4>
+
+    <form method="post" action="/products/add" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input class="form-control" name="name" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input class="form-control" name="price" type="number" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Quantity</label>
+        <input class="form-control" name="quantity" type="number" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Category</label>
+        <select class="form-select" name="categoryId">
+          <option value="">-- None --</option>
+          <% categories.forEach(c => { %>
+            <option value="<%= c.categoryId %>"><%= c.name %></option>
+          <% }) %>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Image</label>
+        <input class="form-control" type="file" name="image" accept="image/*">
+      </div>
+
+      <button class="btn btn-primary">Save</button>
+      <a class="btn btn-light" href="/products">Cancel</a>
+    </form>
+  </div>
+</div>
+
+<%- include("../layouts/footer") %>

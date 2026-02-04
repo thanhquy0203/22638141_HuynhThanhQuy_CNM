@@ -1,0 +1,53 @@
+<%- include("../layouts/header", { title: "Categories" }) %>
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3>Categories</h3>
+  <a href="/categories/add" class="btn btn-primary">+ Add Category</a>
+</div>
+
+<div class="card shadow-sm">
+  <div class="table-responsive">
+    <table class="table table-hover align-middle mb-0">
+      <thead class="table-dark">
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th class="text-end">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (!categories.length) { %>
+          <tr>
+            <td colspan="3" class="text-center text-muted py-4">
+              No categories
+            </td>
+          </tr>
+        <% } %>
+
+        <% categories.forEach(c => { %>
+          <tr>
+            <td><%= c.name %></td>
+            <td><%= c.description %></td>
+            <td class="text-end">
+              <a href="/categories/<%= c.categoryId %>/edit"
+                 class="btn btn-sm btn-outline-secondary">
+                Edit
+              </a>
+
+              <form method="post"
+                    action="/categories/<%= c.categoryId %>/delete"
+                    class="d-inline"
+                    onsubmit="return confirm('Delete this category? (Products will stay)')">
+                <button class="btn btn-sm btn-outline-danger">
+                  Delete
+                </button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include("../layouts/footer") %>
