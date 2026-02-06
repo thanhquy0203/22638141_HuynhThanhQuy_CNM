@@ -1,0 +1,16 @@
+{
+  "name": "th2_2",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1693.0",
+    "dotenv": "^17.2.3",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "uuid": "8.3.2"
+  }
+}
