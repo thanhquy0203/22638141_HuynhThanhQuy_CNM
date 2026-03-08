@@ -1,0 +1,16 @@
+{
+  "name": "hello-eb-mvc-dynamo",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.600.0",
+    "@aws-sdk/lib-dynamodb": "^3.600.0",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "uuid": "^9.0.1"
+  }
+}
